@@ -1,0 +1,2 @@
+Put the GHSL population grid here (see README_TEAM.md):
+GHS_POP_E2025_GLOBE_R2023A_4326_30ss_V1_0.tif
