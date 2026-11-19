@@ -1,0 +1,143 @@
+% ======================================================================================================
+% EH627 final project report: The Regional Footprint of AI Data Centres
+% Build:  cd report && tectonic -X compile --keep-logs main.tex      (see ../CLAUDE.md for the full loop)
+% Figures: report/analysis/*.py -> report/figs/*.pdf     Tables: report/analysis/make_tables.py -> report/tables/
+% Text: one file per section in report/sections/. Every number: presentation/data/claims.csv or
+%       report/data/claims_report.csv. Status and TODOs per teammate: report/STATUS.md.
+% ======================================================================================================
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[a4paper,margin=0.70in,headsep=10pt]{geometry}
+\usepackage{microtype,amsmath,graphicx,xcolor,booktabs,array,multirow}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{caption,fancyhdr,tcolorbox,enumitem,ragged2e,textcomp}
+\usepackage[round,authoryear]{natbib}
+\usepackage[compact]{titlesec}
+\usepackage{stfloats}
+\usepackage[hidelinks]{hyperref}
+\tcbuselibrary{skins,breakable}
+
+% ---------------------------------------------------------------- draft switch
+% \drafttrue shows the red [TODO name: ...] notes for the team. Set \draftfalse for the submitted PDF.
+\newif\ifdraft
+\draftfalse
+\newcommand{\todo}[2]{\ifdraft{\color{red!65!black}\sffamily\scriptsize[TODO #1: #2]}\fi}
+
+% ---------------------------------------------------------------- authors (fill in the placeholders)
+\newcommand{\AuthorA}{Aryan Solanki}\newcommand{\RollA}{23110049}
+\newcommand{\AuthorB}{Aditya Kumar}\newcommand{\RollB}{22110015}
+\newcommand{\AuthorC}{Prerna Sawane}\newcommand{\RollC}{22110235}
+\newcommand{\ShortTitle}{The Regional Footprint of AI Data Centres}
+
+% ---------------------------------------------------------------- colours (navy = reference PDF; phases = deck)
+\definecolor{navy}{HTML}{12305E}
+\definecolor{phaseGA}{HTML}{8C4A2F}\definecolor{phaseCloud}{HTML}{6B7783}\definecolor{phaseAI}{HTML}{2E5EAA}
+\newcommand{\phGA}[1]{\textcolor{phaseGA}{\textbf{#1}}}
+\newcommand{\phCloud}[1]{\textcolor{phaseCloud}{\textbf{#1}}}
+\newcommand{\phAI}[1]{\textcolor{phaseAI}{\textbf{#1}}}
+
+% ---------------------------------------------------------------- layout (playbook section 4b)
+\setlength{\columnsep}{0.26in}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.55em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.55em}{}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{}{0pt}{}[.]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\titlespacing*{\paragraph}{0pt}{2pt}{0.5em}
+\renewcommand{\topfraction}{0.94}\renewcommand{\bottomfraction}{0.88}
+\renewcommand{\textfraction}{0.05}\renewcommand{\floatpagefraction}{0.72}
+\renewcommand{\dbltopfraction}{0.94}\renewcommand{\dblfloatpagefraction}{0.72}
+\setcounter{topnumber}{3}\setcounter{dbltopnumber}{2}\setcounter{totalnumber}{5}
+\setlength{\textfloatsep}{8pt plus 2pt minus 3pt}
+\setlength{\intextsep}{7pt plus 2pt minus 3pt}
+\setlength{\dbltextfloatsep}{9pt plus 2pt minus 3pt}
+\linespread{1.005}
+\tolerance=1500\emergencystretch=1.4em\hyphenpenalty=90
+\hyphenation{Aque-duct data-centre data-centres Visa-kha-pat-nam Tar-lu-va-da Ada-vi-va-ram Ram-bil-li Ad-ani-Con-neX geo-coded}
+\setlist{nosep,leftmargin=1.2em}
+\captionsetup{font=small,labelfont=bf,labelsep=colon,justification=justified,singlelinecheck=false}
+\captionsetup[table]{position=top,skip=3pt}
+\captionsetup[figure]{skip=4pt}
+
+% ---------------------------------------------------------------- header and footer
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\footnotesize\color{navy}Final Report \textbar\ EH627}
+\fancyhead[R]{\footnotesize\color{navy}\ShortTitle}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{black!30}\leaders\hrule height \headrulewidth\hfill}}
+
+% ---------------------------------------------------------------- call-outs and "our reading" paragraphs
+\newtcolorbox{finding}[1]{enhanced,colback=navy!4,colframe=navy,coltitle=white,
+  fonttitle=\bfseries\scriptsize,title={#1},boxrule=0.6pt,arc=1.2pt,
+  left=4.5pt,right=4.5pt,top=2.5pt,bottom=2.5pt,before skip=5pt,after skip=5pt,fontupper=\small}
+\newenvironment{reading}{\par\smallskip\noindent\itshape\small\ignorespaces}{\par\smallskip}
+
+% ---------------------------------------------------------------- bibliography in small type
+\setlength{\bibsep}{1.2pt plus 0.3pt}
+\renewcommand{\bibfont}{\footnotesize}
+\renewcommand{\bibsection}{\section{Bibliography}}
+
+% \tabin{file}: input a generated table body inside a tabular (LaTeX's \input breaks \bottomrule there)
+\makeatletter\newcommand{\tabin}[1]{\@@input #1 }\makeatother
+\newcommand{\Fig}[1]{Figure~\ref{#1}}
+\newcommand{\Tab}[1]{Table~\ref{#1}}
+\newcommand{\cotwo}{CO\textsubscript{2}}
+\newcommand{\kmc}{km\textsuperscript{3}}
+
+\begin{document}
+% ====================================================================================== title page
+\pagenumbering{Alph}\thispagestyle{empty}
+\begin{center}
+\vspace*{1.7cm}
+{\large\scshape Final Project Report}\\[2.4cm]
+{\LARGE\bfseries The Regional Footprint of\\[3pt] AI Data Centres}\\[12pt]
+{\large Energy, Water, Materials and Planetary Boundaries}\\[6pt]
+{\normalsize\itshape Three phases since 1950, and why AI growth no longer stays flat}\\[1.6cm]
+\includegraphics[width=3.4cm]{iitgn_logo_clean.png}
+\vfill
+{\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lcl@{}}
+\textbf{\AuthorA} & \textbar & \RollA \\
+\textbf{\AuthorB} & \textbar & \RollB \\
+\textbf{\AuthorC} & \textbar & \RollC \\
+\end{tabular}}\\[16pt]
+{\normalsize Indian Institute of Technology Gandhinagar}\\[5pt]
+{\normalsize Course: EH627 Anthropocene: Human Impact on the Earth}\\[5pt]
+{\normalsize Submitted to: Prof.\ S.\ K.\ Tandon and Prof.\ Vikrant Jain}\\[14pt]
+{\normalsize November 2026}
+\vspace*{1.4cm}
+\end{center}
+\clearpage
+\pagenumbering{arabic}
+
+% ====================================================================================== body page 1
+\twocolumn[{%
+\begin{center}
+{\Large\bfseries The Regional Footprint of AI Data Centres}\\[4pt]
+{\small Energy, water, materials and planetary boundaries.
+EH627 \emph{Anthropocene: Human Impact on the Earth}, group project, final report}
+\end{center}
+\vspace{2pt}
+\begin{minipage}{\textwidth}\small\noindent\input{sections/0_abstract}\end{minipage}
+\vspace{9pt}
+}]
+
+\input{sections/1_problem}
+\input{sections/2_objectives}
+\input{sections/3_data_methods}
+\section{Results}\label{sec:results}
+\input{sections/4_1_o1_energy}
+\input{sections/4_2_o2_water}
+\input{sections/4_3_siting}
+\input{sections/4_3_o3_society}
+\input{sections/4_4_o4_synthesis}
+\input{sections/5_deliverables}
+\input{sections/6_conclusions}
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+\input{sections/7_bibliography_note}
+\input{sections/8_contributions}
+
+\end{document}

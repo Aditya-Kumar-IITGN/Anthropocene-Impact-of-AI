@@ -1,0 +1,110 @@
+% 3 Data and methods (all; first draft: Aryan). Sources: deck slides 10-14; scripts in presentation/analysis and
+% report/analysis. Parameter values: presentation/analysis/water_params.py (claims.csv rows O2c).
+\section{Data and methods}\label{sec:methods}
+
+\subsection{Datasets}
+\Tab{tab:data} lists the sources actually used. The backbone is Epoch AI's database of AI data centres
+\citep{epoch2026dc}: 96 large AI sites with their current facility power and build timelines to the end of 2030. It is
+the only open dataset that gives power and timelines site by site. Its coverage is the main limit on what follows
+(Section~\ref{sec:limits}): it tracks AI sites only, not all data centres, and most of them are in the United States.
+
+\begin{table}[t]\centering
+\caption{Datasets used, by theme. All are public; each number in the report traces to one of them or to our scripts.}
+\label{tab:data}
+\footnotesize\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}P{1.75cm}P{5.85cm}@{}}
+\toprule
+Theme & Sources \\
+\midrule
+Sites and capacity & Epoch AI data centres: 96 sites, facility MW today and planned to 2030 \citep{epoch2026dc};
+geocoded with OpenStreetMap Nominatim \citep{osm2026} \\
+Electricity, efficiency & IEA global and regional, 2024--2030 \citep{iea2025}; LBNL US series 2014--2023
+\citep{shehabi2024}; global estimates 2010--2018 \citep{masanet2020}; Uptime PUE survey 2007--2025
+\citep{uptime2025} \\
+Growth & World primary energy 1950--2019 \citep{owid2026energy}; training compute of 540 notable AI models
+\citep{epoch2026models} \\
+Carbon & Ember grid carbon intensity by country, 2024 \citep{ember2026} \\
+Water & WRI Aqueduct 4.0: baseline annual and monthly stress, 2030 and 2050 projections \citep{kuzma2023}; WUE, PUE
+and grid water-intensity ranges \citep{devriesgao2026}; city records and news reports (case studies) \\
+Population & GHSL GHS-POP 2025, 30 arc-second grid \citep{schiavina2023} \\
+Materials, waste & USGS Mineral Commodity Summaries 2026 \citep{usgs2026}; Global E-waste Monitor 2024
+\citep{balde2024} \\
+Boundaries & Planetary Health Check 2025 \citep{sakschewski2025}; Earth3 thresholds \citep{collste2018}; Great
+Acceleration framing \citep{steffen2015ga} \\
+Society & Data Center Watch Q1 and Q2 2026 (US) \citep{dcw2026,dcw2026q2}; EJAtlas grievance categories \citep{temper2015} \\
+Siting record & Public statements, official documents and press on the Visakhapatnam hub; Google's 2026 Environmental Report
+\citep{google2026env}; NITI Aayog framework \citep{niti2026}; CEEW study \citep{ceew2026} (Section~\ref{sec:siting}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Changes from the plan} The plan proposed a wider net. We used Epoch AI sites only, with no all-data-centre
+layer and no footprint-based size model; two case studies instead of three or four clusters, plus a siting audit of the Visakhapatnam hub (Section~\ref{sec:siting}), which was not in the plan; country population from
+the GHSL grid rather than UN WPP for the location quotients; no Gini per internet user and no dispute catalogue of our
+own; and world primary energy as the only Great Acceleration series.
+
+\subsection{Analytical and statistical methods}
+
+\paragraph{1. Spatial overlay} Each Epoch site was geocoded from its address (all 96 matched, with no country or
+state mismatches after restricting queries by country code) and joined to its Aqueduct basin. City-level accuracy is
+enough: basins are tens to hundreds of kilometres across. For every site we read the baseline water-stress category,
+the 2030 and 2050 projections (business as usual and pessimistic) and the number of months in which withdrawals exceed
+supply. The key output is the share of capacity, weighted by MW, in high or extremely high stress, now and for the
+planned 2030 capacity. People near the sites were counted from GHSL cells whose centres lie within 25 and 50\,km;
+overlapping circles are merged, so nobody is counted twice. The same cells, aggregated by country, are used for the
+country table (method 2).
+
+\paragraph{2. Inequality} For each country $i$ with capacity $C_i$ and population $P_i$, the location quotient
+\begin{equation}
+LQ_i = \frac{C_i / C}{P_i / P}
+\end{equation}
+is above 1 when a country hosts more than its population share. Countries are then sorted by capacity per person to
+draw a Lorenz curve, with cumulative population share $x_k$ and cumulative capacity share $y_k$, and
+\begin{equation}
+G = 1 - \textstyle\sum_k (x_k - x_{k-1})(y_k + y_{k-1}).
+\end{equation}
+Countries with no tracked site are pooled into one zero-capacity group. Because they all have exactly zero capacity,
+pooling them leaves $G$ unchanged, so this is the exact country-level Gini for the Epoch sample. Country and world
+population are sums of GHSL 2025 cells (8.19 billion people), so numerators and denominators come from the same grid.
+
+\paragraph{3. Water-use range} Water is estimated from electricity. With facility power $M$ (MW) and load factor
+$L$,
+\begin{equation}
+E_{\text{fac}} = M L \times 8{,}760\,\text{h},\qquad E_{\text{IT}} = E_{\text{fac}} / \text{PUE},
+\end{equation}
+\begin{equation}
+W_{\text{direct}} = E_{\text{IT}}\times\text{WUE},\qquad W_{\text{indirect}} = E_{\text{fac}}\times WI_{\text{grid}}.
+\end{equation}
+The low case uses PUE 1.10, WUE 0.56\,L/kWh and $WI_{\text{grid}}$ 1.04\,L/kWh; the high case PUE 1.43, WUE 1.04
+and $WI_{\text{grid}}$ 4.52, all from \citet{devriesgao2026}, who compiles IEA, LBNL and company values. The load factor
+(70\% low, 90\% high) is \emph{our assumption}: AI clusters run close to continuously, but no site reports its average
+draw. Both terms are \emph{consumption}. The low and high cases combine the extremes of each range, so they are bounds,
+not a confidence interval.
+
+\paragraph{4. Standardised growth} Each series is fitted as $\ln y_t = a + bt$ by ordinary least squares, giving the
+annual growth rate and doubling time
+\begin{equation}
+r = e^{b} - 1,\qquad T_2 = \ln 2 / b.
+\end{equation}
+Intervals (95\%) are reported where a yearly series exists; observed and projected years are kept separate. For the
+report we added fit diagnostics: $R^2$, the Durbin--Watson statistic for serial correlation in the residuals
+\citep{durbin1950}, and a Newey--West standard error for $b$ \citep{newey1987} with
+$\lfloor 4(n/100)^{2/9}\rfloor$ lags. Serial correlation leaves the slope unbiased but makes the ordinary interval too
+narrow. To test where a trend breaks, a continuous two-segment (hinge) model
+$\ln y_t = a + bt + c\,(t-\tau)_+$ is fitted for every candidate year $\tau$ and the $\tau$ with the smallest residual sum
+of squares is kept. The change in the Bayesian information criterion \citep{schwarz1978} between one and two segments
+(the break year counted as a parameter) says whether the break is worth having: the more negative, the stronger the case.
+
+\paragraph{5. Case studies and synthesis} Two contrasting cases were built from official records and news reports:
+Google's data centre in Mesa, Arizona, which is on our map, and the planned Google--AdaniConneX hub in Visakhapatnam,
+India, which is not yet in the Epoch data. For each we record the water source and its distance, the local reaction,
+and our own estimate. All results are then placed in one matrix of planetary boundary against scale of impact, with each
+cell coded \textbf{Q} (quantified in this project), \textbf{D} (documented pathway, not quantified) or \textbf{N} (not
+assessed).
+
+\paragraph{6. Siting audit} For the Visakhapatnam hub we read what its backers and the authorities have said about the choice
+of site, and list the instruments that could have governed it. We then place the hub's Aqueduct basin class among those of the 96
+tracked sites, weighted by planned MW, and rerun the water model of method 3 for 1\,GW under two cooling designs: wet cooling,
+and air cooling that needs 10 or 20\% more energy, so that indirect water rises in proportion. The 10\% is Google's own average
+figure; the 20\% is a test for a hot climate. Only the arithmetic is ours (\texttt{analysis/fig\_siting.py}); the reading of the record
+rests on public sources, which we cite, and is limited to what they say.

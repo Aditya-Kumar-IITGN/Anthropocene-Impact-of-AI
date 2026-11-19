@@ -1,0 +1,42 @@
+% 1 Statement of the problem (all; first draft: Aryan). Sources: deck slides 2-6, claims.csv rows S1, S1/O1, S5/O3.
+\section{Statement of the problem}\label{sec:problem}
+
+Artificial intelligence is usually discussed as software, but it has a physical body. Every model is trained and run
+in a data centre: a building packed with servers whose chips draw electricity, shed heat that has to be removed, often
+by evaporating water, and are made of copper, gallium, cobalt and rare earths that are mined in a few places and end up
+as electronic waste. In this report ``AI'' means that infrastructure, not the algorithms.
+
+Data centres used about 415\,TWh in 2024, roughly 1.5\% of the world's electricity, and the International Energy
+Agency's base case has them reaching about 945\,TWh by 2030 \citep{iea2025}. That growth lands on an Earth system that
+is already outside most of its safe operating space. Each assessment of the planetary boundaries has found more of them
+crossed: three of seven in 2009 \citep{rockstrom2009}, four in 2015 \citep{steffen2015pb}, six of nine in 2023
+\citep{richardson2023} and seven of nine in the latest Planetary Health Check \citep{sakschewski2025,src_pb}. Data
+centres press on several of them at once: climate through their electricity, freshwater through cooling and power-plant
+water, and novel entities and biosphere integrity through e-waste and mining.
+
+A share of 1.5\% sounds small, and globally it is. But it is not spread evenly. The United States (45\%), China (25\%)
+and Europe (15\%) account for 85\% of data-centre electricity \citep{iea2025}, and the large AI sites tracked by Epoch
+AI are more concentrated still: 83\% of their 15\,GW is in the United States \citep{epoch2026dc}. The impacts
+therefore fall on particular grids, river basins and communities. A recent global study placed one quarter of the
+world's data centres in water-stressed areas \citep{rosa2026}, but it counts facilities: a 10\,MW server room and a
+2\,GW AI campus count the same, and their water use is not estimated. No assessment we know of weighs data centres by
+size and relates them to the water and the people around them. That is the gap this project addresses.
+
+\paragraph{Three phases and one puzzle} We frame the history in three phases since 1950. In the \emph{Great
+Acceleration} (1950--2010) energy use, \cotwo\ and material extraction rose together \citep{steffen2015ga}. In the
+\emph{cloud era} (2010--2018) computing grew enormously, yet global data-centre electricity barely moved: by one widely
+used estimate, compute instances rose by about 550\% while energy use rose by about 6\% \citep{masanet2020}. In the
+\emph{AI era} (2019 onward) that decoupling broke: US data-centre electricity rose from 76 to 176\,TWh between 2018
+and 2023 \citep{shehabi2024}. Our organising question is therefore: \emph{why did cloud growth leave energy use almost
+flat, while AI growth does not?}
+
+\begin{finding}{Terms used in this report}
+\textbf{MW and TWh.} Power (MW, GW) is a rate; energy (TWh) is power over time. 1\,GW running all year is about
+8.8\,TWh. Epoch AI reports \emph{facility} power, the whole building, not just the computers.
+\textbf{PUE} (power usage effectiveness) = facility energy $\div$ IT energy; 1.5 means an extra 50\% goes to cooling
+and losses. \textbf{WUE} (water usage effectiveness) = litres of water consumed on site per kWh of IT energy.
+\textbf{Grid water intensity} = litres consumed at power plants per kWh generated. \textbf{Withdrawal vs
+consumption:} water withdrawn is taken from a river or aquifer, and part is returned; water consumed is evaporated and
+lost to the basin. \textbf{Water stress} (WRI Aqueduct) = annual withdrawals as a share of a basin's renewable supply:
+above 40\% is \emph{high}, above 80\% \emph{extremely high}.
+\end{finding}

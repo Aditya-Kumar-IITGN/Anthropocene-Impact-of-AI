@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+
+# LaTeX build intermediates (keep PDFs)
+*.aux
+*.log
+*.blg
+*.bbl
+*.synctex.gz
+*.out
+*.nav
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class

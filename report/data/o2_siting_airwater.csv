@@ -1,0 +1,5 @@
+case,energy_penalty_air,direct_wet_ML_d,indirect_wet_ML_d,indirect_air_ML_d,total_wet_ML_d,net_saving_air_ML_d,direct_pct_city_supply
+low,0.1,8.55,17.47,19.22,26.02,6.81,2.09
+low,0.2,8.55,17.47,20.97,26.02,5.06,2.09
+high,0.1,15.71,97.63,107.4,113.34,5.95,3.83
+high,0.2,15.71,97.63,117.16,113.34,-3.82,3.83

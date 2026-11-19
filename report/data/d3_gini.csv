@@ -1,0 +1,5 @@
+measure,grouping,gini
+current MW,"countries (12 with sites + all others, zero)",0.9361182186483284
+current MW,host countries only (10),0.7614352613605064
+planned 2030 MW,"countries (12 with sites + all others, zero)",0.9404232531496733
+planned 2030 MW,host countries only (12),0.779533115593326

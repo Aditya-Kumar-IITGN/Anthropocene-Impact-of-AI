@@ -1,0 +1,85 @@
+% 6 Summary and conclusions (all). Verdicts as presented (deck slide 37): keep them unless new evidence changes them.
+\section{Summary and conclusions}\label{sec:conclusions}
+
+\subsection{What we expected, and what we found}
+The plan stated three expected results. \Tab{tab:verdicts} sets each against the evidence. The first is only
+\emph{partly confirmed}: concentration is now confirmed at country level (Gini 0.94), but the claim that capacity sits
+far from its water source rests on two case studies, not a systematic measurement. The second, the efficiency
+explanation, is \emph{partly supported}: the timing fits the end of building-efficiency gains, but chip efficiency was
+not tested. The third is \emph{supported as a framework}: impacts do sort by scale, but several cells of the matrix are
+documented rather than measured.
+
+\begin{table}[t]\centering
+\caption{Expected results (from the plan) against what we found.}
+\label{tab:verdicts}
+\footnotesize\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}P{2.0cm}P{3.75cm}P{1.6cm}@{}}
+\toprule
+Expected & Found & Verdict \\
+\midrule
+Capacity is far more concentrated than population; part of it sits in water-stressed basins, often far from its
+water source & 83\% of tracked AI power is in the US; country Gini 0.94; LQ about 20 in the US and Malaysia. 34\% of
+capacity in high-stress basins today, 39--45\% of the 2030 plan. Distance to source shown for two cases only (231 and
+193\,km in a straight line) & \textbf{Partly confirmed} \\
+Cloud-era growth was absorbed by one-off efficiency gains, now used up, so AI-era growth outpaces efficiency &
+Compute broke upward in 2011, yet data-centre electricity rose only 6\% in 2010--18. PUE flat since 2014; the post-2018
+jump (7 to 18\% a year) matches AI-server demand ($<$2 to $>$40\,TWh). Chip efficiency not tested & \textbf{Partly
+supported} \\
+Electricity and water impacts are local or regional; carbon is global; minerals and e-waste are displaced & Water:
+$<$0.1\% of the global limit, but 12 of 12 months over supply in Mesa's basin. Grid carbon varies 2.6-fold. Minerals
+come from a few producers; e-waste collection is very uneven (0.7--42.8\%) & \textbf{Supported as a framework} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Limitations}\label{sec:limits}
+The findings are only as good as the data behind them. In rough order of how much they matter:
+\begin{enumerate}[leftmargin=1.3em,itemsep=1.5pt]
+\item \textbf{The sample is AI-only and US-heavy.} Epoch AI tracks 96 large AI sites, 77 of them in the United States.
+It is not a census of data centres: the IEA's 415\,TWh covers all of them. Shares, the Gini and the location quotients
+describe where large AI campuses are being built, and countries such as India appear only through a case study.
+\item \textbf{Water stress counts power-plant withdrawals.} Aqueduct's annual stress is total withdrawals over renewable
+supply, and withdrawals include thermoelectric cooling water, most of which is returned. Basins with large power plants,
+such as parts of Indiana and western New York, probably score ``high'' partly for that reason.
+\item \textbf{Consumption against a withdrawal limit.} Our water figures are consumption; Earth3's freshwater boundary is
+set on withdrawals. The comparison is conservative (withdrawals would be larger), but the two are not the same
+quantity.
+\item \textbf{US-derived grid water factors.} The indirect range uses 1.04--4.52\,L/kWh, from IEA- and LBNL-based values
+that reflect the US grid. Applying them to India (Visakhapatnam) or Malaysia is an approximation; local generation mixes
+could give lower or higher values.
+\item \textbf{The load factor is assumed.} We assume sites draw 70--90\% of facility power on average. No site reports
+this, and partly built campuses may run lower; water scales linearly with it.
+\item \textbf{The seven-group Gini was a lower bound.} The deck's 0.927 pooled countries; our country-level 0.94 is the
+exact value for the sample. It still cannot see inequality within countries.
+\item \textbf{Breakpoints depend on the window.} World energy breaks in 1974 over 1950--2019 but in 2011 over
+1990--2019, and 1950 cannot be tested because earlier data are decadal.
+\item \textbf{Data-centre growth rests on published points.} Each data-centre row of \Tab{tab:growth} rests on two
+published values, not a series we fitted, so it has no interval; the US rates are those stated by LBNL. Masanet et al.'s
++6\% is taken from the LBNL summary of the paper.
+\item \textbf{The siting reading rests on public sources.} Section~\ref{sec:siting} uses statements, official documents and press reports,
+some from campaigners and some from the company; Google's water assessment for Visakhapatnam is unpublished. Our air-cooling arithmetic uses
+US-derived grid factors and a 10--20\% energy penalty taken from a company statement. We did not compare Visakhapatnam with other Indian hubs.
+\item \textbf{Facility versus IT power.} Epoch's MW are facility power; we convert to IT energy with the PUE range. Sites
+that report water do not state the basis, so the 0.001--7\,L/kWh spread is indicative only.
+\end{enumerate}
+
+\subsection{Responses matched to the scale of impact}\label{sec:responses}
+Because each pressure has its own scale, no single policy covers them.
+\textbf{Locally}, siting rules can keep large campuses out of basins in extreme stress or require non-potable water
+(reclaimed or treated wastewater), and permits can cover noise and diesel backup generators. Approval could also require a
+published catchment water balance, the water source and its distance, and a public hearing, tests that the Visakhapatnam record
+lacks and that the NITI Aayog framework now proposes (Section~\ref{sec:siting}).
+\textbf{Regionally}, grid planning and fair tariffs can stop households paying for data-centre load, and water can be
+allocated by river basin, so that a city's supply and a power plant's cooling are judged together.
+\textbf{Globally}, mandatory disclosure of energy, water and location-based carbon (from the actual local grid, not
+offset by certificates bought elsewhere), site by site, would close most of the data gaps listed above, and
+supply-chain standards can address mineral concentration and the e-waste collection gap.
+
+\subsection{Conclusion}
+The cloud era showed that computing can grow without much more electricity, as long as buildings keep getting more
+efficient. That margin ran out around 2014, and the AI build-out arrived after it: compute took off in 2011, electricity
+followed after 2018. Its footprint is still small against global totals (1.5\% of electricity, under 0.1\% of the
+freshwater boundary), and that is exactly why global totals are the wrong yardstick. Weighted by size, a third of AI
+capacity already sits in water-stressed basins and nearly half of the 2030 plan could; most of its water is evaporated
+at power plants; and the capacity itself is concentrated in a handful of countries, with a Gini of 0.94. AI does not
+have one footprint. It has a local, a regional and a global one, and each needs its own response.
