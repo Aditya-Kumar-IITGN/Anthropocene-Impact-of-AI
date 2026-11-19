@@ -1,0 +1,22 @@
+metric,weight,share,n_sites,total_weight
+baseline: high or extremely high,sites,0.3645833333333333,96,96.0
+baseline: high or extremely high,current MW,0.3443328998368262,76,15078.431374000002
+baseline: high or extremely high,planned 2030 MW,0.3856504687008476,96,50323.5483296
+baseline: arid and low water use,sites,0.020833333333333332,96,96.0
+baseline: arid and low water use,current MW,0.026879453833564264,76,15078.431374000002
+baseline: arid and low water use,planned 2030 MW,0.024096075103010095,96,50323.5483296
+2030 BAU: high or extremely high,sites,0.375,96,96.0
+2030 BAU: high or extremely high,current MW,0.3668352405368715,76,15078.431374000002
+2030 BAU: high or extremely high,planned 2030 MW,0.45409953706620193,96,50323.5483296
+2050 BAU: high or extremely high,sites,0.3645833333333333,96,96.0
+2050 BAU: high or extremely high,current MW,0.3623918075073901,76,15078.431374000002
+2050 BAU: high or extremely high,planned 2030 MW,0.39802241028020946,96,50323.5483296
+2030 PES: high or extremely high,sites,0.4270833333333333,96,96.0
+2030 PES: high or extremely high,current MW,0.4650550064571988,76,15078.431374000002
+2030 PES: high or extremely high,planned 2030 MW,0.5134355755435136,96,50323.5483296
+2050 PES: high or extremely high,sites,0.5,96,96.0
+2050 PES: high or extremely high,current MW,0.5149275682209302,76,15078.431374000002
+2050 PES: high or extremely high,planned 2030 MW,0.6183168920482862,96,50323.5483296
+Rosa-like: >= 1 month demand > supply,sites,0.21875,96,96.0
+Rosa-like: >= 1 month demand > supply,current MW,0.1828439531683609,76,15078.431374000002
+Rosa-like: >= 1 month demand > supply,planned 2030 MW,0.2377276721753593,96,50323.5483296

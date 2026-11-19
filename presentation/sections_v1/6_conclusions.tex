@@ -1,0 +1,65 @@
+% 6 · Summary and conclusions
+\section{Summary and conclusions}
+
+\begin{frame}{What we expected, and what we found}{}
+  {\scriptsize\renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.7cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.1cm}@{}}
+    \toprule
+    Expected & Found & Verdict \\
+    \midrule
+    Capacity is far more concentrated than population, and part of it sits in water-stressed basins &
+      83\% of tracked AI power is in the US (Gini proxy 0.93). 34\% of capacity is in high-stress basins today, 39–45\% of the 2030 plan. Country-level Gini still to do &
+      \textbf{Partly confirmed} \\
+    Cloud-era growth was absorbed by one-off efficiency gains, now used up, so AI-era growth outpaces efficiency &
+      Compute broke upward in 2011, yet data-centre electricity rose only 6\% in 2010–18. PUE stopped improving around 2014; the 2018 jump (7 → 18\% a year) matches AI-server demand (<2 → >40 TWh). Chip efficiency not tested &
+      \textbf{Partly supported} \\
+    Electricity and water impacts are local or regional; carbon is global; minerals and e-waste are displaced &
+      Water: under 0.1\% of the global limit, but 12 of 12 months over supply in Mesa. Grid carbon varies 2.6-fold. Minerals come from a few producers; e-waste collection is very uneven (0.7–43\%) &
+      \textbf{Supported as a framework} \\
+    \bottomrule
+  \end{tabularx}}
+  \note{%
+    \NoteKey{One expectation supported as a framework, two partly; none refuted.}
+    \NoteSlide{Row 1, concentration and water: partly confirmed (83\% of capacity in the US; 34\% in high-stress basins, 39--45\%
+    by 2030; country Gini still to do). Row 2, the efficiency story: partly supported (compute broke upward in 2011, but
+    data-centre electricity rose only 6\% in 2010--18; PUE stopped improving around 2014, and the 2018 jump matches AI
+    servers' demand). Row 3, impacts by scale: supported as a framework (water $<$0.1\% globally but over supply every
+    month in Mesa; grid carbon varies 2.6-fold; minerals concentrated; e-waste collection very uneven).}
+    \NoteSay{45}{What did we find? Capacity is concentrated and a third of it sits in stressed basins, rising by 2030: partly
+    confirmed, since the country-level test is still to come. The efficiency story partly holds: compute exploded from
+    2011, electricity only from about 2018, when AI servers arrived; chip efficiency we did not test. And impacts do
+    sort by scale: water is local, carbon is global, minerals are mined far from where they are used.}
+  }
+\end{frame}
+
+\begin{frame}{Responses matched to the scale of impact}
+  \begin{columns}[T,onlytextwidth]
+    \column{.31\textwidth}
+    \textbf{Local}\par\smallskip
+    {\small Siting rules; water-source rules (reclaimed, not potable); noise and air permits\par}
+    \column{.31\textwidth}
+    \textbf{Regional}\par\smallskip
+    {\small Grid planning and fair tariffs; basin-level water allocation\par}
+    \column{.31\textwidth}
+    \textbf{Global}\par\smallskip
+    {\small Mandatory disclosure (energy, water, location-based carbon); supply-chain standards\par}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \begin{minipage}{.8\textwidth}\centering
+      AI does not have one footprint. It has a local, a regional and a global one, and each
+      needs its own response.
+    \end{minipage}
+  \end{center}
+  \vfill
+  \note{%
+    \NoteKey{Match the response to the scale: local rules for local harm, grid and basin planning regionally, disclosure globally.}
+    \NoteSlide{Local: siting rules; rules on water source (reclaimed, not drinking water); noise and air permits. Regional: grid
+    planning and fair tariffs; water allocation by river basin. Global: mandatory disclosure of energy, water and
+    location-based carbon (emissions from the actual local grid, not offset by certificates bought elsewhere); standards
+    for supply chains.}
+    \NoteSay{35}{So what should be done? Match the response to the scale. Locally: where sites go and what water they may use.
+    Regionally: grid planning, so households do not pay for data-centre growth, and water shared out by basin. Globally:
+    companies should have to disclose energy, water and real carbon, site by site, and supply chains need standards.}
+  }
+\end{frame}

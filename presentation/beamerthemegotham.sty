@@ -1,0 +1,105 @@
+% Gotham look (latextemplates.com/pdfs/gotham-beamer.pdf), rebuilt on metropolis.
+% Colours sampled from the reference PDF. Chrome only: data colours live in main.tex.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemegotham}[2026/11/10 Gotham-style theme for EH627]
+
+\usetheme[sectionpage=none,subsectionpage=none,progressbar=none,numbering=none,block=fill]{metropolis}
+\RequirePackage{tikz}
+
+% ---------------------------------------------------------------- colours
+\definecolor{slate}{HTML}{2D3E50}
+\definecolor{gold}{HTML}{FFCC00}
+\definecolor{track}{HTML}{D6C6B7}
+\definecolor{ink}{HTML}{191919}
+\definecolor{muted}{HTML}{7A7A7A}
+
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{frametitle}{fg=white,bg=slate}
+\setbeamercolor{title}{fg=ink}
+\setbeamercolor{section title}{fg=ink}
+\setbeamercolor{alerted text}{fg=slate}
+\setbeamercolor{footline}{fg=ink}
+\setbeamercolor{structure}{fg=slate}
+\setbeamerfont{alerted text}{series=\bfseries}
+\setbeamerfont{footline}{size=\tiny}
+\setbeamerfont{section title}{size=\large,series=\bfseries}
+\setbeamerfont{subsection title}{size=\normalsize,series=\bfseries}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{block title}{fg=white,bg=slate}
+\setbeamercolor{block body}{fg=ink,bg=slate!7}
+\setbeamerfont{block title}{size=\footnotesize,series=\bfseries}
+\setbeamertemplate{itemize subitem}{\color{muted}\textendash}
+
+% ---------------------------------------------------------------- progress bar
+% Gold fill on a beige track; the fill is the share of the talk already shown.
+\newcommand{\gotham@progressbar}[1]{% #1 = width
+  \begin{tikzpicture}
+    \fill[track] (0,0) rectangle (#1,0.55ex);
+    \pgfmathsetmacro{\gotham@done}{\insertframenumber/max(\inserttotalframenumber,1)}
+    \fill[gold] (0,0) rectangle ({\gotham@done*#1},0.55ex);
+  \end{tikzpicture}}
+
+% ---------------------------------------------------------------- title page
+\setbeamertemplate{title page}{%
+  \vspace*{\fill}
+  \begin{center}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+    \ifx\insertsubtitle\@empty\else
+      \vspace{5pt}{\usebeamerfont{subtitle}\insertsubtitle\par}\fi
+    \vspace{9pt}
+    {\color{gold}\rule{\textwidth}{1.6pt}}\par
+    \vspace{9pt}
+    {\small\insertauthor\par}\vspace{3pt}
+    {\small\insertdate\par}
+  \end{center}
+  \vspace{4pt}
+  {\raggedright\scriptsize\insertinstitute\par}
+  \vspace*{\fill}\vspace*{\fill}}
+
+% ---------------------------------------------------------------- dividers
+\newif\ifgotham@divider \gotham@dividertrue
+\newcommand{\nodivider}{\gotham@dividerfalse}   % next \section gets no divider
+\newif\ifsubsectiondividers \subsectiondividerstrue
+
+\setbeamertemplate{section page}{%
+  \centering
+  \begin{minipage}{.62\textwidth}
+    {\usebeamerfont{section title}\usebeamercolor[fg]{section title}%
+     \insertsectionnumber.\enspace\insertsectionhead\par}
+    \vspace{6pt}
+    \gotham@progressbar{\linewidth}
+  \end{minipage}}
+
+\setbeamertemplate{subsection page}{%
+  \centering
+  \begin{minipage}{.62\textwidth}
+    {\color{muted}\scriptsize\insertsectionnumber.\enspace\insertsectionhead\par}
+    \vspace{3pt}
+    {\usebeamerfont{subsection title}\insertsubsectionhead\par}
+    \vspace{6pt}
+    \gotham@progressbar{\linewidth}
+  \end{minipage}}
+
+\AtBeginSection{%
+  \ifgotham@divider\begin{frame}[c]\usebeamertemplate{section page}\end{frame}\fi
+  \global\gotham@dividertrue}
+\AtBeginSubsection{%
+  \ifsubsectiondividers\begin{frame}[c]\usebeamertemplate{subsection page}\end{frame}\fi}
+
+% ---------------------------------------------------------------- overview
+\setbeamercolor{section in toc}{fg=ink}
+\setbeamertemplate{section in toc}{\inserttocsection\par\vspace{5pt}}
+\setbeamertemplate{subsection in toc}{}
+
+% ---------------------------------------------------------------- footline
+% Gotham: date · short title · author. We add the slide number for Q&A.
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=2.2ex,leftskip=.45cm,rightskip=.45cm]{footline}%
+    \usebeamerfont{footline}%
+    \rlap{\insertshortdate}\hfill\insertshorttitle\hfill
+    \llap{\insertshortauthor\quad\insertframenumber}%
+  \end{beamercolorbox}}
+
+\endinput

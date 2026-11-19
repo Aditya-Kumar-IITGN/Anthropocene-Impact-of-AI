@@ -1,0 +1,69 @@
+slide,claim,value,unit,source,how_obtained,verified
+O2a,AI data centres in the Epoch dataset,96,sites,Epoch AI (2026) AI data centers,data/raw/epoch/data_centers.csv,yes
+O2a,current power of tracked sites,15078,MW,Epoch AI (2026),water_stress.py,yes
+O2a,planned power by end-2030 (timeline max; current if no timeline),50324,MW,Epoch AI (2026) timelines,water_stress.py,yes
+O2b,share of sites in high/extremely high baseline stress,36.5,%,Aqueduct 4.0 bws_cat>=3,water_stress.py,yes
+O2b,share of current MW in high/extremely high baseline stress,34.4,%,Aqueduct 4.0,water_stress.py,yes
+O2b,share of planned 2030 MW in high/extremely high baseline stress,38.6,%,Aqueduct 4.0,water_stress.py,yes
+O2b,share of planned 2030 MW in high/extremely high stress 2030 BAU,45.4,%,Aqueduct 4.0 bau30_ws_x_c>=3,water_stress.py,yes
+O2b,share of planned 2030 MW in high/extremely high stress 2050 pessimistic,61.8,%,Aqueduct 4.0 pes50_ws_x_c>=3,water_stress.py,yes
+O2b,growth current->planned MW in stressed vs other basins,3.74 vs 3.13,x,Epoch + Aqueduct,ad hoc check (see O2_PLAN),yes
+O2b,share of sites with >=1 month withdrawals > supply (Rosa-like),21.9,%,Aqueduct 4.0 monthly bws_raw>1,water_stress.py,yes
+O2b,Rosa et al. share of data centres in water-scarce areas,25 (2315 of 9347),%,Rosa et al. (2026) ES&T,"full text via Europe PMC (PMC13648243); metric = 'water gap' >=1 month, 2001-2010",yes
+O2a,planned MW in stressed basins: Texas / New Mexico,7318 / 2723,MW,Epoch + Aqueduct,ad hoc check,yes
+O2c,water use of tracked sites today (direct+indirect),143-624,bn L/yr,de Vries-Gao (2026) parameters; our load-factor assumption,water_use.py,yes
+O2c,water use of planned 2030 capacity,478-2082,bn L/yr,same,water_use.py,yes
+O2c,indirect share of total water,67.1-86.1,%,same,water_use.py,yes
+O2c,direct water in stressed basins today / 2030,16.2-29.8 / 60.6-111.3,bn L/yr,same + Aqueduct,water_use.py,yes
+O2c,reported site water intensity range (Epoch non-zero sites at 80% load),0.001-7.1,L per facility kWh,Epoch AI (2026) timelines,water_use.py,yes (basis of reported figure not stated)
+O2c,WUE range,0.56-1.04,L/kWh IT,de Vries-Gao (2026): IEA-implied 2023; Google,paper text,yes
+O2c,grid water intensity range,1.04-4.52,L/kWh,de Vries-Gao (2026): IEA-implied; LBNL US 2023,paper text,yes
+O2c,PUE range,1.10-1.43,ratio,de Vries-Gao (2026): Google; IEA 2023 global,paper text,yes
+O2c,benchmark all-AI water footprint 2025,312.5-764.6,bn L,de Vries-Gao (2026),paper text,yes
+O2d,gallium primary production share China,99,%,USGS MCS 2026 Gallium,PDF text,yes
+O2d,rare earths mine production share China / US,69.2 / 13.1,%,USGS MCS 2026 (270000 / 51000 of 390000 t),PDF table,yes
+O2d,cobalt mine production share DR Congo,74.2,%,USGS MCS 2026 (230000 of 310000 t),PDF table,yes
+O2d,copper mine share Chile / refining share China,23.0 / 48.3,%,USGS MCS 2026,PDF table,yes
+O2d,US share of planned 2030 AI MW,86.2,%,Epoch AI (2026),materials.py,yes
+O2d,e-waste formally collected Europe / Africa,42.8 / 0.7,%,Balde et al. (2024) GEM 2024 Fig. 7 and Table A2.2,"report PDF (Asia corrected 6.6 -> 6.4 kg/cap, 10 Nov)",yes
+O2d,e-waste generated 2022 / formally collected,62 Mt / 22.3%,,Balde et al. (2024),UNITAR press release,yes
+O2b,people within 25 km of stressed sites (union),21.08,million,GHSL GHS-POP 2025 (R2023A 30ss),population.py,yes
+O2b,people within 50 km of stressed sites (union),47.88,million,GHSL GHS-POP 2025,population.py,yes
+O2b,people within 50 km of all tracked sites (union),106.43,million,GHSL GHS-POP 2025,population.py,yes
+Case1,Mesa water supply split (Colorado River via CAP / Salt and Verde / groundwater),53 / 40 / 7,%,City of Mesa water supply page (2026),web page (summary of page),yes
+Case1,CAP canal length Lake Havasu to Phoenix area,~190 mi (~306 km),km,US Bureau of Reclamation CAP project page (Hayden-Rhodes aqueduct segments sum ~190 mi); CAP: 336 mi total,page read; 190 = our sum of segments,yes
+Case1,Google Mesa water deal (reported 2020),"1 million gal/day guaranteed, up to 4 million (15.1 M L/day; 5.5 bn L/yr)",,"Bloomberg (Sattiraju, 1 Apr 2020) via Data Center Knowledge; NBC News (19 Jun 2021)",article read (corrected 10 Nov: not a 2021 approval),yes
+Case1,"Vice Mayor Jenn Duff quote; only vote against the May 2021 $800M Facebook-linked (Redale LLC) data centre, NOT Google",data centers are an irresponsible use of our water,,NBC News (19 Jun 2021); CNBC (21 Jun 2021),article read (corrected 10 Nov),yes
+Case1,Lower Basin Colorado River allocation cut,1.25 million acre-feet a year for 2027-28,,City of Mesa water shortage page; US Bureau of Reclamation news release 21 Aug 2026,"pages read; Arizona's share of the cut 760,000 af/yr",yes
+Case1,Google Mesa basin stress and months with withdrawals > supply,Extremely high; 12 of 12,,our analysis (Aqueduct 4.0),case_studies.py,yes
+Case2,Vizag hub size and investment,1 GW; ~US$15 bn,,The Federal (27 Oct 2026); Google press release (14 Oct 2025),article read,yes
+Case2,Vizag foundation stone,28 April 2026 (Tarluvada),,Mongabay India (12 May 2026),article read,yes
+Case2,Vizag city water supply vs requirement,410 vs 480 million L/day,,The Federal (27 Oct 2026),article read,yes
+Case2,environmental clearance does not disclose operational water use,quote,,Mongabay India (12 May 2026),article read,yes
+Case2,state: data-centre water from Polavaram via dedicated pipelines,paraphrase of IT minister,,The Federal (27 Oct 2026),article read,yes
+Case2,Google and AdaniConneX say they will use air cooling,statement (unnamed),,The Federal (27 Oct 2026),article read,yes
+Case2,"protest slogan ""We cannot drink data""",quote,,The Federal (27 Oct 2026),article read,yes
+Case2,Vizag basin stress (our check),Medium-high (20-40%); 0 months withdrawals > supply,,our analysis (Aqueduct 4.0),case_studies.py (hub geocoded to Tarluvada 17.906N 83.329E),yes
+Case2,1 GW indirect water at power plants (our range),17-98 million L/day (4-24% of city supply),,our estimate with de Vries-Gao ranges (US-derived grid factors),case_studies.py,yes (estimate)
+O2b,"planned 2030 MW share in stress: 38.6% (baseline) -> 45.4% (2030 BAU); +6.4 pts from Meta Hyperion and Amazon Ridgeland (raw 0.37-0.38 -> 0.45-0.49), +2.4 from two Ulanqab sites (arid -> extremely high), -1.9 from Utah/Nevada sites leaving",see claim,pts,Epoch + Aqueduct 4.0,ad hoc decomposition (10 Nov),yes
+O2a,US share of current MW,83.4,%,Epoch AI (2026),ad hoc check,yes
+O2d,China banned Ga/Ge exports to US Dec 2024 (MOFCOM No. 46); clause suspended 9 Nov 2025 to 27 Nov 2026 (MOFCOM No. 72),see claim,,USGS MCS 2026 Gallium/Germanium; MOFCOM Announcement No. 72 of 2025,PDF text + MOFCOM page; re-check for extension before presenting,yes
+Method5,straight-line distance CAP intake -> Google Mesa / Polavaram -> Vizag hub,231 / 193,km,Nominatim geocodes,case_studies.py,yes
+O2e,"Earth3 freshwater boundary: withdrawals safe < 3000, high-risk > 4000 km3/yr (as in Steffen et al. 2015)",3000 / 4000,km3/yr,Collste et al. (2018) Earth3 technical notes p.27,PDF (references_aditya_work/Colliste2018eartharxiv_pes.pdf),yes
+O2e,2030 plan water (consumption) as share of Earth3 safe limit,0.016-0.069 (<0.1),%,our water_use.py range / 3000 km3,arithmetic: 0.478-2.082 km3 / 3000,yes (mixes consumption vs withdrawal limit; stated on slide)
+O2e,"Earth3 climate boundary: safe < 1 C, high-risk > 1.5 C above 1850",1 / 1.5,deg C,Collste et al. (2018) p.23,PDF,yes
+S1,"PB assessments: 3 of 7 crossed (2009), 4 of 7 (2015), 6 of 9 (2023), 7 of 9 (2026)",see claim,,"Stockholm Resilience Centre, Planetary boundaries page (stockholmresilience.org/research/planetary-boundaries.html)",graphic pics/pb_trangression.png; source given by user,yes
+S1/O1,"IEA: data centres 415 TWh in 2024 (~1.5% of world electricity); US 45%, China 25%, Europe 15%; ~12%/yr since 2017; ~945 TWh by 2030 (Base Case)",see claim,,"IEA (2025) Energy and AI, executive summary","page read (verification agent, 12 Nov)",yes
+O1,"LBNL: US data centres ~60 TWh 2014-16, 76 TWh 2018, 176 TWh 2023; CAGR ~7% (2014-18), 18% (2018-23) as stated in ES p.7; T2 10.2 / 4.2 yr",see claim,,Shehabi et al. (2024) LBNL-2001637,report read; T2 = ln2/ln(1+r),yes
+O1,LBNL: AI-accelerated servers <2 TWh (2017) to >40 TWh (2023),see claim,TWh,Shehabi et al. (2024) s.5,report read,yes
+O1,"Uptime: weighted average PUE 2.50 (2007), 1.65 (2014), 1.54 (2025), near-flat 6 years",see claim,,"Uptime Institute Global Data Center Survey 2025, Fig. 2",report read,yes
+O1,"Ember 2024 emissions intensity: China 559, US 384, EU 212, world 473 gCO2e/kWh (Aditya's EU 179 was wrong; corrected)",see claim,gCO2e/kWh,Ember yearly electricity data (downloaded 12 Nov 2026),analysis/o1_regional.py,yes
+S1,Masanet et al. (2020): global data-centre energy +6% in 2010-18 while compute instances +550%,see claim,%,Masanet et al. (2020) Science full text verified (194 to 205 TWh),article read,yes
+O3,"Tracked AI IT power: US 12,580 of 15,078 MW (83.4%), Malaysia 8.3%, China 5.9%; Gini 0.927 across 7 country groups (between-group proxy)",see claim,,Epoch AI (2026) + UN WPP 2024; Aditya's calculation,US share reproduced by us (83.4%); Gini not re-run,partial
+O3,"Data Center Watch Q1 2026: at least 75 US projects worth ~$130 bn blocked or delayed; active opposition groups more than doubled since Q4 2025, now in 49 states ('833 groups' not found on the page; dropped)",see claim,,datacenterwatch.org/q1-2026,page read,yes
+O1/D2,"World primary energy 1950-2010: r 2.35%/yr, T2 29.8 yr (95% CI 27.9-32.0), n=48",see claim,,Our World in Data,analysis/growth_table.py,yes
+O1/D2,"World primary energy 2010-2019: r 1.21%/yr, T2 57.5 yr (51.3-65.5)",see claim,,Our World in Data,analysis/growth_table.py,yes
+O1/D2,"AI training compute (Epoch notable models, 2010-2026): T2 0.48 yr (0.45-0.51), n=478; breakpoint 2011, doubling 1.67 -> 0.47 yr",see claim,,Epoch AI (accessed 26 Oct 2026),analysis/growth_table.py,yes
+O1/D2,"World energy best single break: 1974 over 1950-2019, 2011 over 1990-2019 (window-dependent); data before 1965 decadal, so 1950 not testable",1974 / 2011,year,Our World in Data,analysis/growth_table.py,yes
+O1/D2,"Data-centre electricity world 2010-18: +6% -> 0.73%/yr, T2 ~95 yr; IEA 2024-30 415->945 TWh: 14.7%/yr, T2 5.1 yr",see claim,,Masanet et al. (2020) via LBNL; IEA (2025),analysis/growth_table.py,yes
+S5/O3,Epoch 'Current power (MW)' is facility power (separate 'IT power' column exists); Aditya's figure labels corrected from 'IT power',see claim,,Epoch AI data_centers.csv / data_center_timelines.csv columns,column check,yes

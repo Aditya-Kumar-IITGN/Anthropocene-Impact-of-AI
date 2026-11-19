@@ -1,0 +1,6 @@
+item,stage,top_producer,top_share_pct,second_producer,second_share_pct,year,source
+Gallium,primary production,China,99,Russia,0.7,2025,USGS MCS 2026 Gallium (text: China 99% of primary low-purity production; Russia 6000 of 900000 kg)
+Rare earths,mine production,China,69.2,United States,13.1,2025,USGS MCS 2026 Rare earths (China 270000 / US 51000 / world 390000 t)
+Cobalt,mine production,DR Congo,74.2,Indonesia,14.2,2025,USGS MCS 2026 Cobalt (DRC 230000 / Indonesia 44000 / world 310000 t)
+Copper,mine production,Chile,23.0,DR Congo,13.9,2025,USGS MCS 2026 Copper (Chile 5300 / DRC 3200 / world 23000 kt)
+Copper,refining,China,48.3,DR Congo,9.7,2025,USGS MCS 2026 Copper (China 14000 / DRC 2800 / world 29000 kt)

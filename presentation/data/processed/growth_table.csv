@@ -1,0 +1,8 @@
+phase,series,period,method,n,projected,r_pct,r_lo,r_hi,T2,T2_lo,T2_hi,source
+Great Acceleration,World primary energy,1950–2010,"OLS, annual",48,False,2.353087209912652,2.189950026795806,2.5164848270595064,29.802157103755288,27.88940027725396,31.996600722028894,Our World in Data (Smil 2017; Energy Institute)
+Cloud era,World primary energy (reference),2010–2019,"OLS, annual",10,False,1.2123776121994112,1.0632386686248996,1.3617366399982567,57.518426189597264,51.24749829881139,65.53802172020919,Our World in Data
+Cloud era,"Data-centre electricity, world",2010–2018,two published values,2,False,0.7310203546384786,,,95.165288367535,,,Masanet et al. (2020): +6% (LBNL summary)
+Cloud era,"Data-centre electricity, US",2014–2018,two published values,2,False,7.000000000000006,,,10.244768351058712,,,Shehabi et al. (2024): ~7%/yr as stated
+AI era,"Data-centre electricity, US",2018–2023,two published values,2,False,17.999999999999993,,,4.187835133512322,,,Shehabi et al. (2024): ~18%/yr as stated
+AI era,"Data-centre electricity, world (projected)",2024–2030,two published values,2,True,14.700141050110904,,,5.053895615167172,,,IEA (2025) base case: 415 -> 945 TWh
+AI era,"AI training compute, notable models",2010–2026,"OLS, per model",478,False,328.8593148057534,290.1443808259979,371.4160216950238,0.4760761144774859,0.44702711053242294,0.5091628640216662,Epoch AI Notable AI Models

@@ -1,0 +1,135 @@
+% EH627 final presentation, v1: adds Aditya's O1/O3/O4 material (Anthropocene_aditya_slides.pptx). The previous deck is main.tex + sections/. Build: tectonic -X compile --keep-logs main_v1.tex
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{gotham}
+\usepackage{booktabs,tabularx,array,colortbl}
+\usepackage{sansmath}\sansmath                      % maths in the same sans as the text
+
+% Draft mode shows to-do notes and flags unverified numbers. Set false for the final PDF.
+\newif\ifdraft \draftfalse   % v1 is the final deck: no to-dos or unverified marks left
+
+% Speaker notes: \note{...} inside a frame. main.tex ignores them; notes.tex builds notes.pdf
+% (one page per frame that has notes: slide thumbnail + notes).
+% Note layout (v1): every note uses the same blocks, so notes_v1.pdf reads like a study guide.
+\newcommand{\NoteKey}[1]{{\color{slate}\textbf{In one line.}} #1\par}
+\newcommand{\NoteSlide}[1]{\textbf{On the slide.} #1\par}
+\newcommand{\NoteWhy}[1]{\textbf{Why it matters.} #1\par}
+\newcommand{\NoteSay}[2]{\textbf{Say ($\approx$#1 s).} #2\par}
+\newcommand{\NoteTerm}[2]{\textbf{#1.} #2\par}
+\newenvironment{NoteAsk}{\textbf{If asked.}\begin{itemize}}{\end{itemize}}
+
+\ifdefined\buildnotes
+  \setbeameroption{show only notes}
+  \setbeamertemplate{note page}{%
+    \vspace*{2pt}\noindent
+    \begin{minipage}[t]{.72\linewidth}\vspace{0pt}%
+      {\color{slate}\footnotesize\bfseries\insertframetitle\par}\smallskip
+      {\color{muted}\tiny Slide \insertframenumber\par}%
+    \end{minipage}\hfill
+    \begin{minipage}[t]{.22\linewidth}\vspace{0pt}\raggedleft\insertslideintonotes{0.2}\end{minipage}\par
+    \vspace{3pt}%
+    \noindent{\scriptsize\setlength{\parskip}{2pt}%
+     \renewcommand{\itemize}{\list{\textbullet}{\leftmargin=9pt\itemsep=0pt\topsep=1pt\parsep=0pt\labelsep=4pt}}%
+     \renewcommand{\enditemize}{\endlist}%
+     \insertnote\par}}
+\fi
+
+% ---------------------------------------------------------------- data colours (figures and tables only)
+\definecolor{phaseGA}{HTML}{8C4A2F}     % Great Acceleration 1950–2010
+\definecolor{phaseCloud}{HTML}{7E8A96}  % cloud era 2010–2018
+\definecolor{phaseAI}{HTML}{2E5EAA}     % AI era 2019→
+
+% ---------------------------------------------------------------- helpers
+\newcommand{\src}[1]{\par\vfill{\color{muted}\tiny Sources: #1\par}}
+\newcommand{\chk}[1]{#1\ifdraft\textsuperscript{\color{red!70!black}†}\fi}   % number not yet verified
+\newcommand{\todo}[1]{\ifdraft\par\smallskip{\color{red!70!black}\scriptsize\textbf{To do:} #1\par}\fi}
+\newcommand{\figslot}[3][\linewidth]{%                                        % placeholder for a figure
+  \begin{tikzpicture}
+    \draw[muted,dashed,fill=muted!6] (0,0) rectangle ({#1-0.6pt},#2);
+    \node[muted,align=center,font=\scriptsize,text width=.85*#1] at (.5*#1,.5*#2) {#3};
+  \end{tikzpicture}}
+\newcommand{\bignum}[3][slate]{%                                              % big number + caption
+  \begin{minipage}[t]{.3\textwidth}\centering
+    {\color{#1}\fontsize{24}{26}\selectfont\bfseries #2}\par\vspace{3pt}
+    {\scriptsize #3\par}
+  \end{minipage}}
+\newcommand{\phase}[2]{\cellcolor{#1}{\color{white}\bfseries #2}}             % phase header cell
+
+% ---------------------------------------------------------------- title
+\title{The Regional Footprint of AI Data Centres}
+\subtitle{Energy, Water, Materials and Planetary Boundaries}
+\author{Aryan · Aditya · Prerna}
+\date{November 2026}
+\institute{EH627 Anthropocene: Human Impact on the Earth\\IIT Gandhinagar}
+\titlegraphic{}
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+  \note{%
+    {\color{slate}\textbf{Primer 1 of 2: the basics. Read this first (3 minutes).}}\par
+    \NoteTerm{What this talk is}{A 30-minute group talk asking where the physical footprint of AI (electricity, water,
+    minerals, waste) lands on the planet, and at what scale. ``AI'' here means the \emph{data centres} AI runs in, not
+    the software.}
+    \NoteTerm{Data centre}{A large building full of servers. AI data centres are packed with GPUs, the chips that train
+    and run AI models. They need three things from the Earth: electricity, cooling (often with water), and hardware made
+    from mined minerals that ends up as e-waste.}
+    \NoteTerm{Power units}{1 MW (megawatt) = one million watts. 1 GW (gigawatt) = 1,000 MW, roughly the output of one
+    large power station. Energy over time is TWh: 1 GW running all year is about 8.8 TWh.}
+    \NoteTerm{PUE}{Power usage effectiveness = total power of the building $\div$ power used by the computers. 1.0 would
+    be perfect; 1.5 means an extra 50\% goes to cooling and losses.}
+    \NoteTerm{Water: two separate questions}{(1) \emph{Where} is it used? \emph{Direct} = in the data centre's own
+    cooling; \emph{indirect} = at the power plants that make its electricity. (2) \emph{What happens} to it?
+    \emph{Withdrawn} = taken out of a river or aquifer, with part returned; \emph{consumed} = evaporated, gone from the
+    river. Every amount answers both: our estimates are \emph{consumed} water, direct plus indirect.}
+    \NoteTerm{Water stress}{From WRI's Aqueduct maps: the share of a river basin's renewable water that people already
+    take each year. Above 40\% is ``high'', above 80\% ``extremely high''.}
+  }
+\end{frame}
+
+\begin{frame}{Overview}
+  \vfill
+  \begin{columns}[c]
+    \column{.6\textwidth}\tableofcontents
+  \end{columns}
+  \vfill
+  \note{%
+    {\color{slate}\textbf{Primer 2 of 2: the big picture and the storyline (2 minutes).}}\par
+    \NoteTerm{Planetary boundaries}{Nine limits on how hard humans can push Earth's systems (climate, freshwater, land,
+    biodiversity, chemicals and more). Crossing one risks abrupt, hard-to-reverse change. In 2025, 7 of the 9 were
+    assessed as crossed.}
+    \NoteTerm{Three phases since 1950}{\emph{Great Acceleration} (1950--2010): energy, CO\textsubscript{2} and materials
+    rise together. \emph{Cloud era} (2010--18): computing grows enormously, but data-centre electricity stays almost flat.
+    \emph{AI era} (2019 on): electricity takes off.}
+    \NoteTerm{The question}{Why did cloud growth leave energy almost flat, while AI growth does not?}
+    \NoteTerm{Our answer in one line}{\emph{Small globally, concentrated locally.} AI's footprint is a small share of the
+    world's energy and water, but it piles up in particular grids, river basins and towns, so responses have to match
+    that scale.}
+    \NoteTerm{How the talk runs}{Problem $\to$ objectives $\to$ data and methods $\to$ results in four parts (O1 energy and
+    carbon; O2 water, materials and waste; O3 economy and society; O4 synthesis) $\to$ deliverables $\to$ conclusions.}
+    \NoteSay{15}{We go through seven sections. The results come in four parts, one per objective, and we finish with
+    what we found against what we expected.}
+  }
+\end{frame}
+
+\input{sections_v1/1_problem}
+\input{sections_v1/2_objectives}
+\input{sections_v1/3_data_methods}
+\input{sections_v1/4_results}
+\input{sections_v1/5_deliverables}
+\input{sections_v1/6_conclusions}
+\input{sections_v1/7_bibliography}
+
+\begin{frame}[c]
+  \centering\Large Small globally, concentrated locally:\\
+  responses must match the scale of the impact.
+  \note{%
+    \NoteKey{AI's footprint is small globally and concentrated locally, so responses must match the scale.}
+    \NoteTerm{Three things to remember}{(1) By size, 34\% of AI capacity is in high-stress basins today, 39--45\% by 2030.
+    (2) Most of AI's water is evaporated at power plants, not at the data centre. (3) Compute exploded from 2011, but
+    electricity followed only from about 2018, once the easy efficiency gains ran out.}
+    \NoteSay{15}{Small globally, concentrated locally: responses must match the scale of the impact. Thank you.}
+  }
+\end{frame}
+
+\end{document}

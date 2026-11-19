@@ -1,0 +1,129 @@
+query,lat,lon,display_name,osm_type,place_rank
+"5420 Tulane Rd, Memphis, TN 38109|us",34.9979829,-90.0348674,"xAI Macrohard Colossus 2, 5420, Tulane Road, Scaife, Memphis, Shelby County, West Tennessee, Tennessee, 38109, United States",building,30.0
+"5502 Spinks Rd, Abilene, TX 79601|us",32.4942321,-99.8009071,"Spinks Road, Abilene, Taylor County, Texas, 79603, United States",residential,26.0
+"55001 Larrison Blvd, New Carlisle, IN 46552|us",,,,,
+"New Carlisle, IN 46552|us",41.7056871,-86.5098231,"New Carlisle, Saint Joseph County, Indiana, 46552, United States",town,16.0
+"1435 Hwy 54 W, Fayetteville, GA 30214|us",33.4453541,-84.5254819,"1435, Highway 54 West, Fayetteville, Fayette County, Georgia, 30214, United States",place,30.0
+"4581 Webb St, Pryor, OK 74361|us",36.2411721,-95.3300473,"4581, Webb Street, Mid-America Industrial Park, Lusta, Pryor Creek, Mayes County, Oklahoma, 74361, United States",building,30.0
+"Iskandar Puteri, Johor|my",1.4522711,103.6144729,"Iskandar Puteri, Johor Bahru, Johor, Malaysia",town,14.0
+"1 Community Cir, New Albany, OH 43054|us",,,,,
+"New Albany, OH 43054|us",40.0811745,-82.8087864,"New Albany, Plain Township, Franklin County, Ohio, 43054, United States",town,16.0
+"HP79+MP, 81300 Johor Bahru, Johor|my",,,,,
+"81300 Johor Bahru, Johor|my",1.5618098,103.6198754,"81300, Iskandar Puteri, Johor Bahru, Johor, Malaysia",postcode,21.0
+"4800 90th St, Mount Pleasant, WI 53403|us",42.6748702,-87.894888,"4800, 90th Street, Mount Pleasant, Racine County, Wisconsin, 53403, United States",place,30.0
+"5076 S High St, Columbus, OH 43207|us",39.8614521,-83.0039995,"5076, South High Street, Columbus, Franklin County, Ohio, 43137, United States",place,30.0
+"1101 Beech Rd SW, New Albany, OH 43054|us",40.070051,-82.754042,"1101, Beech Road Southwest, New Albany, Jersey Township, Licking County, Ohio, 43054, United States",place,30.0
+"7725 Lake Rd, Barker, NY 14012|us",43.3586546,-78.604128,"7725, Lake Road, Town of Somerset, Niagara County, New York, 14012, United States",building,30.0
+"Mesa, Arizona|us",33.4151005,-111.831455,"Mesa, Maricopa County, Arizona, United States",city,16.0
+"3231 Riverport Rd, Memphis, TN 38109|us",35.0828472,-90.0763831,"Riverport Road, Memphis, Shelby County, West Tennessee, Tennessee, 38109, United States",secondary,26.0
+"10410 Bunge Ave, Council Bluffs, IA 51503|us",41.1666499,-95.7977408,"10410, Bunge Avenue, Council Bluffs, Lewis Township, Pottawattamie County, Iowa, 51503, United States",place,30.0
+"8171 Jim Christal Rd, Denton, TX 76207|us",33.2192732,-97.174715,"Jim Christal Road, Denton, Denton County, Texas, 76203, United States",unclassified,26.0
+"6000 Technology Blvd, Sandston, VA 23150|us",37.4888273,-77.24749,"6000, Technology Boulevard, Sandston, Henrico County, Virginia, 23150, United States",building,30.0
+"Bridge Data Centres, Sedenak Tech Park, Johor|my",,,,,
+"Sedenak Tech Park, Johor|my",1.7000928,103.4143909,"Taman Perindustrian Kulai, Kulai, Johor, Malaysia",industrial,24.0
+"1772-2396 145th St, Rosemount, MN 55068|us",,,,,
+"Rosemount, MN 55068|us",44.7391873,-93.12611,"Rosemount, Dakota County, Minnesota, 55068, United States",town,16.0
+"Amazon Data Services Inc, Madison Mega Site Nissan Parkway and Highway 22 Canton, Mississippi Madison County|us",,,,,
+"Madison Mega Site Nissan Parkway and Highway 22 Canton, Mississippi Madison County|us",,,,,
+"13001 Rollins Ford Road, Bristow, VA 20136|us",,,,,
+"Bristow, VA 20136|us",38.7311636,-77.5480241,"Bristow, Prince William County, Virginia, 20136, United States",town,18.0
+"14250 W Broadway Rd, Goodyear, AZ 85338|us",33.4089905,-112.3647996,"PHX-11, 14250, West Broadway Road, Goodyear, Maricopa County, Arizona, 85338, United States",building,30.0
+"500 8th St, Jeffersonville, IN 47130|us",38.279131,-85.739009,"500, East 8th Street, Port Fulton, Jeffersonville, Clark County, Indiana, 47130, United States",place,30.0
+"Hunt Midwest Business Center, Kansas City, Missouri|us",39.1679508,-94.4788278,"Hunt Midwest Business Center, Kansas City, Clay County, Missouri, 64161, United States",industrial,24.0
+"2310 Eberhardt Rd, Temple, TX 76504|us",31.1259599,-97.3598178,"2310, Eberhardt Road, Temple, Bell County, Texas, 76504, United States",place,30.0
+13360 Miller Rd NW|us,40.1158074,-82.7395358,"13360, Miller Road Northwest, Jersey Township, Licking County, Ohio, 43031, United States",place,30.0
+"11110 State St, Omaha, NE 68142|us",41.3356809,-96.0523625,"State Street, Omaha, Union Precinct, Douglas County, Nebraska, 68007, United States",tertiary,26.0
+"5475 Cloud Ct, Lincoln, NE 68514|us",40.907472,-96.6457832,"Cloud Court, Lincoln, Lancaster County, Nebraska, 68514, United States",unclassified,26.0
+"6030–6070 Technology Blvd, Sandston, VA 23150|us",,,,,
+"Sandston, VA 23150|us",37.5234794,-77.3158118,"Sandston, Henrico County, Virginia, 23250, United States",village,19.0
+"3500 River Rd, The Dalles, OR|us",45.6253889,-121.2023887,"River Road, The Dalles, Wasco County, Oregon, 97058, United States",tertiary,26.0
+"3525–3543 Portugee Rd, Sandston, VA 23150|us",,,,,
+"Co Rd 42, Montgomery, AL 36105|us",32.3694074,-86.2322089,"County Downs Road, Bellehurst, Montgomery, Montgomery County, Alabama, 36109, United States",residential,26.0
+"601 Kuna Mora Rd, Kuna ID 83634|us",43.4592072,-116.4211106,"601, West Kuna Mora Road, Kuna, Ada County, Idaho, 83634, United States",place,30.0
+"Cheyenne, WY 82007|us",41.139981,-104.820246,"Cheyenne, Laramie County, Wyoming, United States",city,16.0
+"1626 County Line Road Ridgeland, Mississippi|us",32.4000327,-90.1971708,"1626, West County Line Road, Lakeover, Jackson, Hinds County, Mississippi, 39213, United States",place,30.0
+"5400 Prosperity Dr NW, Toney, AL|us",,,,,
+"Toney, AL|us",34.8981438,-86.7335699,"Toney, Madison County, Alabama, 35773, United States",hamlet,20.0
+"984 County Road 112, Afton, TX 79220|us",,,,,
+"Afton, TX 79220|us",33.7628599,-100.8168001,"Afton, Dickens County, Texas, 79220, United States",hamlet,20.0
+"5855 SW Kerry St, Cumming, IA 50061|us",,,,,
+"Cumming, IA 50061|us",41.4833235,-93.7624442,"Cumming, Linn Township, Warren County, Iowa, United States",village,16.0
+"YTL Green Data Centers, Kulai, Johor|my",,,,,
+"Kulai, Johor|my",1.6666667,103.6,"Kulai, Johor, Malaysia",district,12.0
+"1275 N Community Cir, Eagle Mountain, UT 84005|us",,,,,
+"Eagle Mountain, UT 84005|us",40.3093488,-112.0119825,"Eagle Mountain, Utah County, Utah, 84005, United States",town,16.0
+"3250 Railport Parkway, Midlothian, TX 76065|us",32.438927,-97.0507991,"Railport Parkway, Midlothian, Ellis County, Texas, 76084, United States",residential,26.0
+"McCarran, Storey County, Nevada|us",39.5539417,-119.4897585,"Studio 6 Mccarran, NV - Sparks - Tahoe - Reno Industrial Center, 795, USA Parkway, Tahoe Reno Industrial Center, Storey County, Nevada, 89434, United States",tourism,30.0
+"4250 Messenger Lp, Los Lunas, NM 87031|us",34.8301645,-106.7838267,"Meta, 4250, Messenger Loop Northwest, Meta Los Lunas Data Center, Los Lunas, Valencia County, New Mexico, 87031, United States",building,30.0
+"105 Whiley Rd, Lancaster, OH 43130|us",39.7270407,-82.6831433,"105, Whiley Road Southwest, Lancaster, Hocking Township, Fairfield County, Ohio, 43130, United States",place,30.0
+"4755 NE Huffman St, Hillsboro, OR 97124|us",45.5588758,-122.9296051,"QTS Data Center - Hillsboro 2, 4755, Northeast Huffman Street, North Hillsboro, Hillsboro, Washington County, Oregon, 97124, United States",building,30.0
+"Land at Maxwell's Farm West, Great Cambridge Road, Cheshunt, EN8 8XH|gb",,,,,
+"Great Cambridge Road, Cheshunt, EN8 8XH|gb",51.6968127,-0.0446399,"Great Cambridge Road, Churchgate, Broxbourne, Hertfordshire, England, EN8 8YD, United Kingdom",trunk,26.0
+"Bayin, Ulanqab|cn",41.6241526,112.6325011,"巴音乡, 察哈尔右翼中旗 ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ, 乌兰察布市 ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ, 内蒙古自治区 ᠦᠪᠦᠷ ᠮᠣᠩᠭᠤᠯ ᠤᠨ ᠥᠪᠡᠷᠲᠡᠭᠡᠨ ᠵᠠᠰᠠᠬᠣ ᠣᠷᠣᠨ, 013500, 中国",town,16.0
+"42575 Arcola Blvd, Sterling, VA 20166|us",,,,,
+"Sterling, VA 20166|us",39.0017455,-77.4033349,"Sterling, Loudoun County, Virginia, 20164, United States",town,18.0
+"330 Austin Blvd, Red Oak, TX 75154|us",32.5376266,-96.7966747,"330, North Austin Boulevard, Red Oak, Ellis County, Texas, 75154, United States",place,30.0
+14651-15249 Gold Coast Rd 68138 Papillion Nebraska|us,,,,,
+"1 Meta Lp, Gallatin, TN 37066|us",,,,,
+"Gallatin, TN 37066|us",36.3883031,-86.4475898,"Gallatin, Sumner County, Middle Tennessee, Tennessee, 37066, United States",town,16.0
+Wuhu|cn,31.1800568,118.2141777,"芜湖市, 安徽省, 中国",region,10.0
+"9685 87th Ave SE, Ellendale, ND 58436|us",46.0102576,-98.5686907,"87th Avenue Southeast, Ellendale Township, Dickey County, North Dakota, 58436, United States",unclassified,26.0
+"14436-14998 Fairview Rd, Springfield, NE 68059|us",,,,,
+"Springfield, NE 68059|us",41.0818396,-96.1310942,"Springfield, Sarpy County, Nebraska, 68059, United States",city,16.0
+"Huawei, Horinger|cn",,,,,
+"1401 Meadowville Technology Parkway, Chester, VA|us",,,,,
+"Chester, VA|us",37.3489475,-77.438379,"Chester, Chesterfield County, Virginia, 23831, United States",census,25.0
+"Batam, Riau Islands|id",1.1030815,104.0383696,"Batam, Kepulauan Riau, Indonesia",city,12.0
+"1125 Electron Ave, Berwick, PA 18603|us",41.0838485,-76.1435333,"Amazon AWS PHL, 1125, Electron Avenue, Berwick, Luzerne County, Pennsylvania, 18603, United States",building,30.0
+"155 Palmer Ln, Marble, NC 28905|us",35.1849883,-83.9141225,"155, Palmer Lane, Marble, Cherokee County, North Carolina, 28905, United States",place,30.0
+"7601 State Hwy 105, Trenton, SC 29847|us",,,,,
+"Trenton, SC 29847|us",33.7416558,-81.8423388,"Trenton, Edgefield County, South Carolina, United States",town,16.0
+"15000 Lambda Drive, San Antonio, TX 78245|us",,,,,
+"San Antonio, TX 78245|us",29.4246002,-98.4951405,"San Antonio, Bexar County, Texas, United States",city,16.0
+"9590 Hornbaker Rd, Manassas, VA 20109|us",38.7458055,-77.5377246,"STACK NVA02D, 9590, Hornbaker Road, Manassas, Prince William County, Virginia, 20109, United States",building,30.0
+"3963 S Lincoln Ave, Vineland, New Jersey|us",39.4281965,-75.0184096,"3963, South Lincoln Avenue, Clayville, Vineland, Cumberland County, New Jersey, 08361, United States",place,30.0
+"Stølevegen 39, 4715 Øvrebø|no",58.257573,7.89205,"39, Stølevegen, Vennesla, Agder, 4715, Norge",place,30.0
+Mäntsälä|fi,60.6353444,25.3159266,"Mäntsälä, Helsingin seutukunta, Uusimaa, Manner-Suomi, Suomi / Finland",town,16.0
+"Ulanqab, Inner Mongolia|cn",40.9902685,113.1315646,"乌兰察布市 ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ, 内蒙古自治区 ᠦᠪᠦᠷ ᠮᠣᠩᠭᠤᠯ ᠤᠨ ᠥᠪᠡᠷᠲᠡᠭᠡᠨ ᠵᠠᠰᠠᠬᠣ ᠣᠷᠣᠨ, 012000, 中国",city,10.0
+"Brooklyn, Victoria|au",-37.8160898,144.8414748,"Brooklyn, Melbourne, Victoria, Australia",suburb,18.0
+2950 S. Litchfield Road|us,33.4194907,-112.3599884,"Stream Data Centers PHX-1, 2950, South Litchfield Road, Goodyear, Maricopa County, Arizona, 85338, United States",building,30.0
+"3545 Wiseman Boulevard, San Antonio, TX 78251|us",29.4771901,-98.6925579,"Wiseman Boulevard, Westover Hills, San Antonio, Bexar County, Texas, 78251, United States",secondary,26.0
+"14720 Omicron Dr, San Antonio, TX 78245|us",29.4168571,-98.7901875,"Vantage TX11, 14720, Omicron Drive, San Antonio, Bexar County, Texas, 78245, United States",building,30.0
+"2205 Industrial South Rd, Dalton, GA, 30721|us",34.7134428,-84.9521507,"2205, Industrial South Road, Dalton, Whitfield County, Georgia, 30721, United States",place,30.0
+"Alibaba Zhangbei Yun Calculation Data Center, Zhangbei County, Zhangjiakou, Hebei, China, 076471|cn",,,,,
+"Zhangbei County, Zhangjiakou, Hebei, China, 076471|cn",,,,,
+"Zhangjiakou, Hebei, China, 076471|cn",,,,,
+"Hebei, China, 076471|cn",,,,,
+"China, 076471|cn",29.5424823,87.6481318,"赤那村, 达居乡, 昂仁县 ངམ་རིང་རྫོང།, 日喀则市 གཞིས་ཀ་རྩེ་གྲོང་ཁྱེར།, 西藏自治区 བོད་རང་སྐྱོང་ལྗོངས།, 中国",village,19.0
+"Start Campus - Sustainable Data Center Services, Sines|pt",,,,,
+"1025 Jefferson Street NW, Atlanta, GA 30318|us",33.7771892,-84.4195499,"QTS Atlanta Data Center 2, 1025, Jefferson Street Northwest, Bellwood, Bankhead, Atlanta, Fulton County, Georgia, 30318, United States",building,30.0
+"Valhallarbraut 868, 262 Reykjanesbær|is",63.9769885,-22.5754769,"Verne Gagnaver, 868, Valhallarbraut, Ásbrú, Keflavík, Reykjanesbær, Suðurnes, 262, Ísland",building,30.0
+"Colorado City, Texas|us",32.3930337,-100.86351,"Colorado City, Mitchell County, Texas, 79512, United States",town,16.0
+"216 Greenfield Rd, Lancaster, PA|us",40.048747,-76.256144,"216, Greenfield Road, East Lampeter Township, Lancaster County, Pennsylvania, 17601, United States",place,30.0
+"1525 W 43rd St S, Muskogee, OK 74401|us",35.6969225,-95.3838562,"1525, West Smith Ferry Road, South Suburban Acres, Muskogee County, Oklahoma, 74401, United States",place,30.0
+"Kvarnsvedsvägen 420, 784 66 Borlänge|se",60.5251367,15.4138107,"Kvarnsvedsvägen, Övermora, Nordanbäck, Borlänge kommun, Dalarnas län, 784 66, Sverige",tertiary,26.0
+"10001 Lima Rd, Claude, TX 79019|us",,,,,
+"Claude, TX 79019|us",35.1081103,-101.362741,"Claude, Armstrong County, Texas, United States",town,16.0
+"5800 EDGEWOOD RD SW CEDAR RAPIDS, IA 52404|us",41.9222823,-91.7156692,"5800, Edgewood Road Southwest, Cedar Rapids, Fairfax Township, Linn County, Iowa, 52404, United States",place,30.0
+"6015 Adams Center Road, Fort Wayne, IN 46806|us",41.0309293,-85.0536261,"6015, Adams Center Road, Fort Wayne, Allen County, Indiana, 46816, United States",place,30.0
+"12356 Middleton Pike, Bowling Green, OH 43402|us",,,,,
+"Bowling Green, OH 43402|us",41.3747744,-83.6513229,"Bowling Green, Wood County, Ohio, United States",town,16.0
+"Holly Ridge, LA 71269|us",32.4676421,-91.6267883,"Holly Ridge, Richland Parish, Louisiana, United States",hamlet,20.0
+Narvik|no,68.4383796,17.4271978,"Narvik, Nordland, 8517, Norge",town,18.0
+"2300 Hallock Young Rd, Warren, OH 44481|us",,,,,
+"Warren, OH 44481|us",41.2367955,-80.8190423,"Warren, Trumbull County, Ohio, United States",city,16.0
+"Saline Township, Washtenaw County, Michigan|us",42.1245153,-83.8385743,"Saline Township, Washtenaw County, Michigan, United States",town,16.0
+"Milam County, Texas|us",30.7626867,-96.9981706,"Milam County, Texas, United States",county,12.0
+"Santa Teresa, Doña Ana County, New Mexico|us",31.8700346,-106.6865799,"Santa Teresa, Doña Ana County, New Mexico, United States",locality,16.0
+"175 Private Road 1604, Abilene, TX 79601, Shackelford County|us",,,,,
+"Abilene, TX 79601, Shackelford County|us",,,,,
+"TX 79601, Shackelford County|us",32.7088752,-99.3307616,"Shackelford County, Texas, United States",county,12.0
+"Nexus L&T Project Office, Al Bihouth, Al Dhafrah, Abu Dhabi|ae",,,,,
+"Al Bihouth, Al Dhafrah, Abu Dhabi|ae",24.4792916,52.3139486,"شارع البِحوث, دلما, منطقة الظفرة, أبو ظبي, الإمارات العربية المتحدة",tertiary,26.0
+"Port Washington, Wisconsin|us",43.3885538,-87.8692845,"Port Washington, Ozaukee County, Wisconsin, 53074, United States",town,16.0
+"6200 76th Ave SW, Fairfax, IA 52228|us",41.9056197,-91.7509874,"6200, 76th Avenue Southwest, Cedar Rapids, Fairfax Township, Linn County, Iowa, 52228, United States",place,30.0
+"652 E Hyperscale Way, Eagle Mountain, UT 84013|us",40.2688855,-112.0342942,"Hyperscale Way, Eagle Mountain, Utah County, Utah, 84005, United States",unclassified,26.0
+"Canton, Madison County, Mississippi|us",32.612602,-90.0367512,"Canton, Madison County, Mississippi, 39046, United States",town,16.0
+"Papillion, Sarpy County, Nebraska|us",41.1544433,-96.0422378,"Papillion, Sarpy County, Nebraska, 68046, United States",city,16.0
+"Horinger County, Hohhot, Inner Mongolia|cn",40.2952478,111.9044975,"和林格尔县 ᠬᠣᠷᠢᠨᠭᠡᠷ ᠰᠢᠶᠠᠨ, 呼和浩特市, 内蒙古自治区 ᠦᠪᠦᠷ ᠮᠣᠩᠭᠤᠯ ᠤᠨ ᠥᠪᠡᠷᠲᠡᠭᠡᠨ ᠵᠠᠰᠠᠬᠣ ᠣᠷᠣᠨ, 011500, 中国",county,12.0
+"Sines, Setúbal|pt",37.956549,-8.8689639,"Sines, Setúbal, Portugal",city,14.0
