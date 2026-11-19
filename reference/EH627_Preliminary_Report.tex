@@ -1,0 +1,124 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{multicol}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+\setlength{\bibsep}{0pt}
+\renewcommand{\arraystretch}{1.1}
+
+\title{\vspace{-1.6cm}\textbf{The Regional Footprint of AI Data Centres:\\Energy, Water, Materials and Planetary Boundaries}\\[2pt]
+\large Preliminary project plan, EH627}
+\author{Aryan, Aditya, Prerna \quad$\cdot$\quad November 2026}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.4cm}
+
+\section{Statement of the problem}
+Every AI model runs in a data centre that draws electricity, uses water for cooling, and is built from mined hardware that ends as e-waste. Data centres used about 1.5\% of world electricity in 2024, and this is projected to roughly double by 2030 \citep{iea2025}. The load is small globally but highly concentrated: the United States, China and Europe account for about 85\% of it, while per-capita use in Africa is a tiny fraction of that in the United States \citep{iea2025}. Impacts therefore fall on particular grids, basins and communities, while seven of nine planetary boundaries are already transgressed \citep{phc2025}. A recent study places one quarter of the world's data centres in water-stressed areas, but it counts facilities and does not estimate their size or water use \citep{rosa2026}. No assessment yet weighs data centres by size and relates them to the people and water around them. In this project, \emph{AI} means data-centre infrastructure. We compare three phases since 1950: the Great Acceleration (1950-2010), the cloud era (2010-2018) and the AI era (2019 onward). Between 2010 and 2018, cloud workloads grew several-fold while global data-centre electricity rose by only about 6\% \citep{masanet2020}. We ask why cloud growth left energy use almost flat, while AI growth does not.
+
+\section{Objectives}
+\textbf{Broad.} A diagnosis of whether, where, and at what scale AI data centres put pressure on planetary boundaries, as a basis for responses matched to each scale of impact.
+
+\textbf{Specific.}
+\begin{enumerate}[label=\textbf{O\arabic*}]
+  \item \textbf{Energy and carbon} (atmosphere): map the regional distribution of data-centre capacity, electricity use and grid carbon intensity, compare growth rates across the three phases, and explain why the cloud era stayed nearly flat while the AI era does not.
+  \item \textbf{Materials, water and waste} (hydrosphere, lithosphere): quantify the water-stress exposure of data-centre capacity and nearby populations, estimate water use, identify water sources, and trace the geography of critical minerals and e-waste.
+  \item \textbf{Economy, politics and society} (anthroposphere): measure how unevenly capacity is distributed relative to population, and document local opposition and supply-chain concentration.
+  \item \textbf{Synthesis}: place the findings on the planetary boundaries \citep{phc2025} and the safe-and-just Earth system boundaries \citep{rockstrom2023}, classified by scale of impact (local, regional, global).
+\end{enumerate}
+
+\section{Data and methods}
+\subsection*{(a) Datasets}
+{\small
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\toprule
+Theme & Sources \\
+\midrule
+Sites and capacity & Market capacity in MW, 97 markets \citep{cw2025}; Epoch AI Frontier Data Centers (MW of large AI sites) \citep{epochdc}; site points from OpenStreetMap, IM3 and ATLAS; Statista counts as a cross-check \citep{statista2026} \\
+Electricity and efficiency & IEA regional series 2020-2030 \citep{iea2025}; LBNL US annual series 2000-2023 \citep{shehabi2024}; global estimates 2010-2018 \citep{masanet2020}; Uptime Institute PUE survey since 2007 \citep{uptime2026}; Epoch AI compute and hardware efficiency \\
+Carbon & Ember grid carbon intensity by country; company emissions reports \\
+Water & WRI Aqueduct 4.0, baseline and 2030/2050 \citep{aqueduct}; published WUE and PUE ranges; water intensity of electricity by generation type; company site reports; utility and permit records for case studies \\
+Population & GHSL population grid; UN World Population Prospects; ITU internet users by country \\
+Materials and waste & USGS Mineral Commodity Summaries; EU JRC critical raw materials study; Global E-waste Monitor \citep{balde2024} \\
+Historical baselines & Great Acceleration indicators \citep{steffen2015}; UNEP IRP material extraction from 1970; Our World in Data energy; NOAA and Law Dome CO$_2$ \\
+Society & Data Center Watch (US); EJAtlas (global) \citep{temper2015}; our own catalogue of data-centre disputes \\
+\bottomrule
+\end{tabularx}}
+
+\subsection*{(b) Analytical and statistical methods}
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Spatial overlay.} Site points will be merged and deduplicated; because most sites lack reported capacity, site size will be estimated from building footprint area and calibrated against sites with known MW. Sites will be joined to Aqueduct basins and population counted within 25 and 50\,km, giving the size-weighted share in high or extremely high water stress, now and for 2030/2050. Differing site counts will be reported as a range.
+  \item \textbf{Inequality.} Using market and country capacity (MW) and IEA regional electricity, we will compute the location quotient $LQ_i = (C_i/C)/(P_i/P)$, where $C$ is capacity and $P$ is population, with a Lorenz curve and Gini coefficient, per person and per internet user.
+  \item \textbf{Water-use range.} Direct water $=E_{\mathrm{IT}}\times\mathrm{WUE}$; indirect water $=E_{\mathrm{IT}}\times\mathrm{PUE}\times WI_{\mathrm{grid}}$, where $E_{\mathrm{IT}}$ is IT energy and $WI_{\mathrm{grid}}$ is the water intensity of national electricity. Low and high bounds will use published WUE, PUE and generation water-intensity ranges.
+  \item \textbf{Standardised growth.} Each series will be fitted as $\ln y_t = a + bt$. Data-centre series (LBNL, IEA) will be fitted for the cloud and AI eras, with observed and projected years kept separate, and compared with Great Acceleration indicators over 1950-2010. We will report the annual growth rate $r = e^{b}-1$ and doubling time $T_2 = \ln 2/b$ with 95\% intervals. Breakpoints from segmented regression will be compared with the phase boundaries (1950, 2010, 2019), so the phases are tested rather than assumed. The cloud-AI contrast will be explained by comparing growth in compute demand with efficiency trends (PUE, hardware performance per watt). Pre-1950 values (e.g.\ pre-industrial CO$_2$ of 280\,ppm) serve only as reference points.
+  \item \textbf{Case studies and synthesis.} We will profile 3-4 contrasting clusters (e.g.\ Northern Virginia, Phoenix, Dublin, Johor) to identify water sources (groundwater, municipal, reclaimed, desalinated) and local effects. All results will be combined in a matrix of planetary boundaries against scale of impact.
+\end{enumerate}
+
+\section{Expected results}
+\begin{itemize}
+  \item Data-centre capacity is far more concentrated than population, and part of it sits in water-stressed basins.
+  \item Cloud-era growth was absorbed by one-off efficiency gains (hyperscale consolidation, virtualisation, better cooling) that are now largely used up, so AI-era growth outpaces efficiency.
+  \item Electricity and water impacts are local or regional; carbon is global; minerals and e-waste are displaced.
+\end{itemize}
+
+\section{Expected deliverables}
+\begin{enumerate}[label=\textbf{D\arabic*}]
+  \item Atlas of data-centre capacity over water stress and population, with 2030 projections.
+  \item Standardised growth table (\%/yr, doubling time, 95\% intervals) for the three phases.
+  \item Regional table of location quotients, Gini, size-weighted water stress, exposed population and water use.
+  \item Case-study profiles, boundary $\times$ scale matrix with matched responses, final report.
+\end{enumerate}
+
+\section{Summary and conclusions}
+The project will diagnose where AI data centres are, how large they are, how fast they grow, and which systems they press on, and whether AI continues past growth or breaks from it. The outcome will be a set of responses matched to scale: siting and water-source rules locally, grid and basin planning regionally, and disclosure and supply-chain standards globally.
+
+{\footnotesize
+\renewcommand{\refname}{\large 7\quad Bibliography}
+\begin{multicols}{2}
+\begin{thebibliography}{99}
+\bibitem{balde2024} Bald\'e, C.P., et al. (2024). \emph{The Global E-waste Monitor 2024}. ITU and UNITAR.
+\bibitem{cw2025} Cushman \& Wakefield (2025). \emph{Global Data Center Market Comparison 2025}.
+\bibitem{epochdc} Epoch AI (2025). \emph{Frontier Data Centers Hub}. epoch.ai/data/data-centers.
+\bibitem{iea2025} IEA (2025). \emph{Energy and AI}. International Energy Agency, Paris.
+\bibitem{aqueduct} Kuzma, S., et al. (2023). \emph{Aqueduct 4.0: Updated Decision-Relevant Global Water Risk Indicators}. World Resources Institute.
+\bibitem{masanet2020} Masanet, E., Shehabi, A., Lei, N., Smith, S., Koomey, J. (2020). Recalibrating global data center energy-use estimates. \emph{Science} 367, 984-986.
+\bibitem{rockstrom2023} Rockstr\"om, J., et al. (2023). Safe and just Earth system boundaries. \emph{Nature} 619, 102-111.
+\bibitem{rosa2026} Rosa, L., et al. (2026). One quarter of global data centers are located in water-stressed areas. \emph{Environmental Science \& Technology} 60(39), 27780-27791.
+\bibitem{phc2025} Sakschewski, B., Caesar, L., et al. (2025). \emph{Planetary Health Check 2025}. PIK, Potsdam.
+\bibitem{shehabi2024} Shehabi, A., et al. (2024). \emph{2024 United States Data Center Energy Usage Report}. Lawrence Berkeley National Laboratory.
+\bibitem{statista2026} Statista (2026). \emph{Number of data centers worldwide by country}, October 2026.
+\bibitem{steffen2015} Steffen, W., et al. (2015). The trajectory of the Anthropocene: the Great Acceleration. \emph{The Anthropocene Review} 2(1), 81-98.
+\bibitem{temper2015} Temper, L., Del Bene, D., Martinez-Alier, J. (2015). Mapping the frontiers and front lines of global environmental justice: the EJAtlas. \emph{Journal of Political Ecology} 22, 255-278.
+\bibitem{uptime2026} Uptime Institute (2026). \emph{Global Data Center Survey 2026}.
+\end{thebibliography}
+\end{multicols}}
+
+\section*{Work distribution}
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Objective & O1 Energy and carbon & O2 Materials, water and waste & O3 Economy and society & O4 Synthesis \\
+Responsible & Aditya & Aryan & Prerna & All \\
+\bottomrule
+\end{tabular}}
+
+\end{document}
